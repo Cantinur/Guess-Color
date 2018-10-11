@@ -3,8 +3,8 @@ let messageDisplay = document.querySelector("#message");
 let colorDisplay = document.querySelector("#colorDisplay");
 let squres = document.querySelectorAll(".squeres");
 let h1 = document.querySelector("h1");
-let newGame = document.querySelector("#newGame");
-let modeBtn = document.querySelectorAll(".mode");
+let newGame = document.getElementById("newGame");
+let modeBtn = document.getElementsByClassName("mode");
 let gameTag = document.querySelector("#gameTag");
 
 let colors = [];
@@ -17,7 +17,7 @@ let isHard = true;
 setUpNewGame(6);
 
 //Velger et tilfeldig tall
-function giRandumNumber(num) {
+function setRandumNumber(num) {
     return Math.floor(Math.random() * num);
 }
 
@@ -27,7 +27,7 @@ function generatRandumColors(number) {
     let c = [];
 
     for (i = 0; i < number; i++) {
-        c.push("rgb(" + giRandumNumber(256) + ", " + giRandumNumber(256) + ", " + giRandumNumber(256) + ")");
+        c.push("rgb(" + setRandumNumber(256) + ", " + setRandumNumber(256) + ", " + setRandumNumber(256) + ")");
     }
     return c;
 }
@@ -41,7 +41,7 @@ function settSquers() {
 
 //Sett svar. Velg en av de tilfeldig generete fargene og sett dem til å være svartet 
 function settAnswer() {
-    return colors[giRandumNumber(colors.length)];
+    return colors[setRandumNumber(colors.length)];
 }
 
 
