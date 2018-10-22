@@ -18,7 +18,8 @@ setUpNewGame(6);
 
 //Velger et tilfeldig tall
 function setRandumNumber(num) {
-    return Math.floor(Math.random() * num);
+    let rand = Math.floor(Math.random() * num);
+    return rand;
 }
 
 //Genererer en tilfeldig farge og putt dem in i et array. 
@@ -76,7 +77,6 @@ function worng(item) {
 }
 
 //Legger til lyttere for for nytt spill knappen
-//Legg merke til at den ikke ligger i en funskjon
 newGame.addEventListener("click", function () {
     setUpNewGame(isHard ? 6 : 3);
 });
